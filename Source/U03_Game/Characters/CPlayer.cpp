@@ -186,7 +186,7 @@ void ACPlayer::Begin_Roll()
 
 void ACPlayer::End_BackStep()
 {
-	if (Action->IsUnarmedMode())
+	if (Action->IsUnarmedMode() || Action->IsWarpMode())
 	{
 		bUseControllerRotationYaw = false;
 		GetCharacterMovement()->bOrientRotationToMovement = true;
@@ -200,7 +200,7 @@ void ACPlayer::End_BackStep()
 
 void ACPlayer::End_Roll()
 {
-	if (Action->IsUnarmedMode() == false)
+	if (Action->IsUnarmedMode() == false && Action->IsWarpMode() == false)
 	{
 		bUseControllerRotationYaw = true;
 		GetCharacterMovement()->bOrientRotationToMovement = false;

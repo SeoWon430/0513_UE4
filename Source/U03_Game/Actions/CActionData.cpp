@@ -8,6 +8,7 @@
 void UCActionData::BeginPlay(class ACharacter* InOwnerCharacter)
 {
 	FTransform transform;
+	CLog::Log(2);
 
 	if (!!AttachmentClass)
 	{
